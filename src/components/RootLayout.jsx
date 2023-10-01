@@ -72,7 +72,7 @@ function Header({
         </Link>
         <div className="flex items-center gap-x-8">
           <Button href="/contact" invert={invert}>
-            Contact us
+            تماس با ما
           </Button>
           <button
             ref={toggleRef}
@@ -115,10 +115,10 @@ function NavigationItem({ href, children }) {
   return (
     <Link
       href={href}
-      className="group relative isolate -mx-6 bg-neutral-950 px-6 py-10 even:mt-px sm:mx-0 sm:px-0 sm:py-16 sm:odd:pr-16 sm:even:mt-0 sm:even:border-l sm:even:border-neutral-800 sm:even:pl-16"
+      className="group relative isolate -mx-6 bg-neutral-950 px-6 py-10 even:mt-px sm:mx-0 sm:px-0 sm:py-16 sm:odd:pl-16 sm:even:mt-0 sm:even:border-r sm:even:border-neutral-800 sm:even:pr-16"
     >
       {children}
-      <span className="absolute inset-y-0 -z-10 w-screen bg-neutral-900 opacity-0 transition group-odd:right-0 group-even:left-0 group-hover:opacity-100" />
+      <span className="absolute inset-y-0 -z-10 w-screen bg-neutral-900 opacity-0 transition group-odd:left-0 group-even:right-0 group-hover:opacity-100" />
     </Link>
   )
 }
@@ -127,12 +127,12 @@ function Navigation() {
   return (
     <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white">
       <NavigationRow>
-        <NavigationItem href="/work">Our Work</NavigationItem>
-        <NavigationItem href="/about">About Us</NavigationItem>
+        <NavigationItem href="/work">نمونه کارها</NavigationItem>
+        <NavigationItem href="/about">درباره ما</NavigationItem>
       </NavigationRow>
       <NavigationRow>
-        <NavigationItem href="/process">Our Process</NavigationItem>
-        <NavigationItem href="/blog">Blog</NavigationItem>
+        <NavigationItem href="/process">روند همکاری</NavigationItem>
+        <NavigationItem href="/blog">بلاگ</NavigationItem>
       </NavigationRow>
     </nav>
   )
@@ -215,16 +215,16 @@ function RootLayoutInner({ children }) {
                 <div className="grid grid-cols-1 gap-y-10 pb-16 pt-10 sm:grid-cols-2 sm:pt-16">
                   <div>
                     <h2 className="font-display text-base font-semibold text-white">
-                      Our offices
+                      پارتنرهای ما
                     </h2>
                     <Offices
                       invert
                       className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2"
                     />
                   </div>
-                  <div className="sm:border-l sm:border-transparent sm:pl-16">
+                  <div className="sm:border-r sm:border-transparent sm:pl-16">
                     <h2 className="font-display text-base font-semibold text-white">
-                      Follow us
+                      ما را دنبال کنید
                     </h2>
                     <SocialMedia className="mt-6" invert />
                   </div>
@@ -245,7 +245,7 @@ function RootLayoutInner({ children }) {
           className="relative isolate flex w-full flex-col pt-9"
         >
           <GridPattern
-            className="absolute inset-x-0 -top-14 -z-10 h-[1000px] w-full fill-neutral-50 stroke-neutral-950/5 [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_50%)]"
+            className="absolute inset-x-0 -top-14 -z-10 h-[1000px] w-full fill-neutral-50 stroke-neutral-950/5 [mask-image:linear-gradient(to_bottom_right,white_40%,transparent_50%)]"
             yOffset={-96}
             interactive
           />

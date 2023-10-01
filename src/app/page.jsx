@@ -36,8 +36,8 @@ function Clients() {
     <div className="mt-24 rounded-4xl bg-neutral-950 py-20 sm:mt-32 sm:py-32 lg:mt-56">
       <Container>
         <FadeIn className="flex items-center gap-x-8">
-          <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white sm:text-left">
-            We’ve worked with hundreds of amazing people
+          <h2 className="text-center font-display text-sm font-semibold text-white sm:text-left">
+            مورد اعتماد صد ها مشتری از جمله
           </h2>
           <div className="h-px flex-auto bg-neutral-800" />
         </FadeIn>
@@ -180,12 +180,10 @@ export default async function Home() {
       <Container className="mt-24 sm:mt-32 md:mt-56">
         <FadeIn className="max-w-3xl">
           <h1 className="font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
-            Award-winning development studio based in Denmark.
+            استودیو برنامه نویسی خلاق واقع در تهران
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
-            We are a development studio working at the intersection of design
-            and technology. It’s a really busy intersection though — a lot of
-            our staff have been involved in hit and runs.
+            ما یک استودیو توسعه هستیم که در تلاقی طراحی و فناوری فعالیت می‌کنیم. اما این یک تلاقی پرانرژی است - بسیاری از کارکنان ما در تجربه‌های موفق و هیجان‌انگیز شرکت کرده‌اند.
           </p>
         </FadeIn>
       </Container>
