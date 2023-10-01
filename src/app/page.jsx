@@ -33,13 +33,13 @@ const clients = [
 
 function Clients() {
   return (
-    <div className="mt-24 rounded-4xl bg-neutral-950 py-20 sm:mt-32 sm:py-32 lg:mt-56">
+    <div className="mt-24 rounded-4xl bg-slate-950 py-20 sm:mt-32 sm:py-32 lg:mt-56">
       <Container>
         <FadeIn className="flex items-center gap-x-8">
           <h2 className="text-center font-display text-sm font-semibold text-white sm:text-left">
             مورد اعتماد صد ها مشتری از جمله
           </h2>
-          <div className="h-px flex-auto bg-neutral-800" />
+          <div className="h-px flex-auto bg-slate-800" />
         </FadeIn>
         <FadeInStagger faster>
           <ul
@@ -77,7 +77,7 @@ function CaseStudies({ caseStudies }) {
         <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {caseStudies.map((caseStudy) => (
             <FadeIn key={caseStudy.href} className="flex">
-              <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
+              <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-slate-950/5 transition hover:bg-slate-50 sm:p-8">
                 <h3>
                   <Link href={caseStudy.href}>
                     <span className="absolute inset-0 rounded-3xl" />
@@ -89,22 +89,22 @@ function CaseStudies({ caseStudies }) {
                     />
                   </Link>
                 </h3>
-                <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
+                <p className="mt-6 flex gap-x-2 text-sm text-slate-950">
                   <time
                     dateTime={caseStudy.date.split('-')[0]}
                     className="font-semibold"
                   >
                     {caseStudy.date.split('-')[0]}
                   </time>
-                  <span className="text-neutral-300" aria-hidden="true">
+                  <span className="text-slate-300" aria-hidden="true">
                     /
                   </span>
                   <span>Case study</span>
                 </p>
-                <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
+                <p className="mt-6 font-display text-2xl font-semibold text-slate-950">
                   {caseStudy.title}
                 </p>
-                <p className="mt-4 text-base text-neutral-600">
+                <p className="mt-4 text-base text-slate-600">
                   {caseStudy.description}
                 </p>
               </article>
@@ -179,10 +179,10 @@ export default async function Home() {
     <>
       <Container className="mt-24 sm:mt-32 md:mt-56">
         <FadeIn className="max-w-3xl">
-          <h1 className="font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
+          <h1 className="font-display text-5xl font-medium tracking-tight text-slate-950 [text-wrap:balance] sm:text-7xl">
             استودیو برنامه نویسی خلاق واقع در تهران
           </h1>
-          <p className="mt-6 text-xl text-neutral-600">
+          <p className="mt-6 text-xl text-slate-600">
             ما یک استودیو توسعه هستیم که در تلاقی طراحی و فناوری فعالیت می‌کنیم. اما این یک تلاقی پرانرژی است - بسیاری از کارکنان ما در تجربه‌های موفق و هیجان‌انگیز شرکت کرده‌اند.
           </p>
         </FadeIn>
