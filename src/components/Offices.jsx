@@ -27,13 +27,13 @@ export function Offices({ invert = false, ...props }) {
           United Kingdom
         </Office>
       </li>
-      {/* <li>
-        <Office name="Billund" invert={invert}>
-          24 Lego Allé
+      <li>
+        <Office name="Omnicart" invert={invert}>
+          Development Agency
           <br />
-          7190, Billund, Denmark
+          Canada
         </Office>
-      </li> */}
+      </li>
     </ul>
   )
 }

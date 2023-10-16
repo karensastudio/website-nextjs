@@ -89,3 +89,9 @@
     url('../fonts/woff/PeydaWeb-Regular.woff') format('woff');
   /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
 }
+
+.faNum {
+  -moz-font-feature-settings: "ss02";
+  -webkit-font-feature-settings: "ss02";
+  font-feature-settings: "ss02";
+}
