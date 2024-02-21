@@ -57,36 +57,16 @@ function Culture() {
 
 const team = [
   {
-    title: 'Leadership',
+    title: 'متخصصین',
     people: [
       {
-        name: 'Leslie Alexander',
-        role: 'Co-Founder / CEO',
-        image: { src: imageLeslieAlexander },
-      },
-      {
-        name: 'Michael Foster',
-        role: 'Co-Founder / CTO',
-        image: { src: imageMichaelFoster },
-      },
-      {
-        name: 'Dries Vincent',
-        role: 'Partner & Business Relations',
-        image: { src: imageDriesVincent },
-      },
-    ],
-  },
-  {
-    title: 'Team',
-    people: [
-      {
-        name: 'Chelsea Hagon',
-        role: 'Senior Developer',
+        name: 'فراز صدری',
+        role: 'Full-stack Developer',
         image: { src: imageChelseaHagon },
       },
       {
-        name: 'Emma Dorsey',
-        role: 'Senior Designer',
+        name: 'عرفان میرزایی',
+        role: 'Full-stack Developer',
         image: { src: imageEmmaDorsey },
       },
       {
@@ -178,9 +158,9 @@ function Team() {
 }
 
 export const metadata = {
-  title: 'About Us',
+  title: 'درباره ما',
   description:
-    'We believe that our strength lies in our collaborative approach, which puts our clients at the center of everything we do.',
+    'ما باور داریم که قدرت ما در رویکرد همکارانه ماست که مشتریان را در مرکز هر چیزی که انجام می‌دهیم قرار می‌دهد.',
 }
 
 export default async function About() {
@@ -190,8 +170,7 @@ export default async function About() {
     <>
       <PageIntro eyebrow="About us" title="Our strength is collaboration">
         <p>
-          We believe that our strength lies in our collaborative approach, which
-          puts our clients at the center of everything we do.
+          "در استودیو کارنسا، ما به ارائه راهکارهای نوآورانه و خلاقانه در این حوزه متعهدیم. با تیمی از متخصصان ماهر، بهترین تجربه را برای مشتریان خود ارائه می‌دهیم."
         </p>
         <div className="mt-10 max-w-2xl space-y-6 text-base">
           <p>
@@ -216,16 +195,16 @@ export default async function About() {
         </StatList>
       </Container>
 
-      <Culture />
+      {/* <Culture /> */}
 
-      <Team />
+      {/* <Team /> */}
 
-      <PageLinks
+      {/* <PageLinks
         className="mt-24 sm:mt-32 lg:mt-40"
         title="From the blog"
         intro="Our team of experienced designers and developers has just one thing on their mind; working on your ideas to draw a smile on the face of your users worldwide. From conducting Brand Sprints to UX Design."
         pages={blogArticles}
-      />
+      /> */}
 
       <ContactSection />
     </>

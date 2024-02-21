@@ -27,13 +27,6 @@ export function Offices({ invert = false, ...props }) {
           United Kingdom
         </Office>
       </li>
-      <li>
-        <Office name="Omnicart" invert={invert}>
-          Development Agency
-          <br />
-          Canada
-        </Office>
-      </li>
     </ul>
   )
 }

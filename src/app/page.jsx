@@ -8,6 +8,7 @@ import { List, ListItem } from '@/components/List'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StylizedImage } from '@/components/StylizedImage'
 import { Testimonial } from '@/components/Testimonial'
+
 import logoBrightPath from '@/images/clients/bright-path/logo-light.svg'
 import logoFamilyFund from '@/images/clients/family-fund/logo-light.svg'
 import logoGreenLife from '@/images/clients/green-life/logo-light.svg'
@@ -16,19 +17,36 @@ import logoMailSmirk from '@/images/clients/mail-smirk/logo-light.svg'
 import logoNorthAdventures from '@/images/clients/north-adventures/logo-light.svg'
 import logoPhobiaDark from '@/images/clients/phobia/logo-dark.svg'
 import logoPhobiaLight from '@/images/clients/phobia/logo-light.svg'
-import logoUnseal from '@/images/clients/unseal/logo-light.svg'
+
+import PhinixLogo from '@/images/clients/phinix/phinix-logo.png'
+import KioskLogo from '@/images/clients/kiosk/kiosk-logo.svg'
+import ViwinLogo from '@/images/clients/viwin/viwin-logo.svg'
+import GardeshgariLogo from '@/images/clients/gardeshgari/gardeshgari-logo.svg'
+import BimeSamanLogo from '@/images/clients/bime-saman/bime-saman-logo.png'
+import UnileverLogo from '@/images/clients/unilever/unilever-logo.svg'
+import OmnicartLogo from '@/images/clients/omnicart/omnicart-logo.svg'
+import ArianDieselLogo from '@/images/clients/arian-diesel/arian-diesel-logo.png'
+import IliaAutoLogo from '@/images/clients/ilia-auto/ilia-logo.png'
+import FinupLogo from '@/images/clients/finup/finup-logo.svg'
+import SimorghTejaratLogo from '@/images/clients/simorgh-tejarat/simorgh-tejarat-logo.png'
+import MedpipLogo from '@/images/clients/medpip/medpip-logo.png'
+
 import imageLaptop from '@/images/laptop.jpg'
 import { loadCaseStudies } from '@/lib/mdx'
 
 const clients = [
-  ['Phobia', logoPhobiaLight],
-  ['Family Fund', logoFamilyFund],
-  ['Unseal', logoUnseal],
-  ['Mail Smirk', logoMailSmirk],
-  ['Home Work', logoHomeWork],
-  ['Green Life', logoGreenLife],
-  ['Bright Path', logoBrightPath],
-  ['North Adventures', logoNorthAdventures],
+  ['بانک گردشگری', GardeshgariLogo],
+  ['بیمه سامان', BimeSamanLogo],
+  ['یونیلیور ایران', UnileverLogo],
+  ['صرافی فینیکس', PhinixLogo],
+  ['Omnicart', OmnicartLogo],
+  ['صرافی کیوسک', KioskLogo],
+  ['آرین دیزل', ArianDieselLogo],
+  ['وی‌وین', ViwinLogo],
+  ['صنایع خودروسازی ایلیا', IliaAutoLogo],
+  ['مجموعه رویدادهای فیناپ', FinupLogo],
+  ['سامانه‌های یکپارچه سیمرغ تجارت', SimorghTejaratLogo],
+  ['پل ایده‌آل پارس', MedpipLogo],
 ]
 
 function Clients() {
@@ -37,7 +55,7 @@ function Clients() {
       <Container>
         <FadeIn className="flex items-center gap-x-8">
           <h2 className="text-center font-display text-sm font-semibold text-white sm:text-left">
-            مورد اعتماد صد ها مشتری از جمله
+            مورد اعتماد ده‌ ها شرکت و استارتاپ از جمله
           </h2>
           <div className="h-px flex-auto bg-slate-800" />
         </FadeIn>
@@ -47,12 +65,17 @@ function Clients() {
             className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-4"
           >
             {clients.map(([client, logo]) => (
-              <li key={client}>
+              <li key={client} className='flex items-center justify-center'>
                 <FadeIn>
-                  <Image src={logo} alt={client} unoptimized />
+                  <Image src={logo} alt={client} unoptimized className="grayscale brightness-[100] opacity-90 max-w-[120px] mx-auto" />
                 </FadeIn>
               </li>
             ))}
+            {/* <li className='flex items-center justify-center'>
+              <FadeIn>
+                <span className='text-white'>+ ۳۵ مشتری دیگر</span>
+              </FadeIn>
+            </li> */}
           </ul>
         </FadeInStagger>
       </Container>
@@ -64,13 +87,11 @@ function CaseStudies({ caseStudies }) {
   return (
     <>
       <SectionIntro
-        title="Harnessing technology for a brighter future"
+        title="هر پروژه، یک داستان و چالش جدید"
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
-          We believe technology is the answer to the world’s greatest
-          challenges. It’s also the cause, so we find ourselves in bit of a
-          catch 22 situation.
+          با مطالعه شرح پروژه (case study) های زیر، با توانایی‌ها و تجربه‌های ما آشنا شوید.
         </p>
       </SectionIntro>
       <Container className="mt-16">
@@ -84,7 +105,7 @@ function CaseStudies({ caseStudies }) {
                     <Image
                       src={caseStudy.logo}
                       alt={caseStudy.client}
-                      className="h-16 w-16"
+                      className="w-16 object-contain grayscale brightness-0"
                       unoptimized
                     />
                   </Link>
@@ -121,12 +142,11 @@ function Services() {
     <>
       <SectionIntro
         eyebrow="خدمات ما"
-        title="We help you identify, explore and respond to new opportunities."
+        title="ما در چه زمینه‌هایی فعالیت می‌کنیم؟"
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
-          As long as those opportunities involve giving us money to re-purpose
-          old projects — we can come up with an endless number of those.
+          فعالیت‌های ما محدود به موارد زیر نیست اما این موارد احتمالا خدماتی است که بیشتر به آن‌ها نیاز دارید.
         </p>
       </SectionIntro>
       <Container className="mt-16">
@@ -141,17 +161,17 @@ function Services() {
             </FadeIn>
           </div>
           <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-[33rem] lg:pr-4">
-            <ListItem title="طراحی وب">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+            <ListItem title="طراحی وب (UI/UX)">
+              خدمات ما در زمینه طراحی UI/UX شامل تحلیل کاربری، طراحی رابط کاربری جذاب و متمایز، و ایجاد پروتوتایپ‌های تعاملی به منظور بهبود تجربه کاربری است. با تمرکز بر کیفیت و ارتباط مستقیم با مشتریان، تیم ما به هدف ارائه تجربه کاربری بی‌نظیری برای مشتریان شما می‌پردازد.
             </ListItem>
-            <ListItem title="برنامه نویسی وب">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+            <ListItem title="برنامه نویسی و توسعه وب">
+              خدمات ما در زمینه برنامه‌نویسی و توسعه وب شامل ایجاد وب‌سایت‌های شخصی و تجاری، توسعه برنامه‌های وب و اپلیکیشن‌های تحت وب، و ارائه راه‌حل‌های نرم‌افزاری سفارشی برای نیازهای منحصر به فرد کسب‌وکارهاست. تیم ما از فناوری‌های روز استفاده می‌کند و با بهره‌گیری از بهترین استانداردهای برنامه‌نویسی، راه‌حل‌هایی انعطاف‌پذیر و قابل اعتماد را برای مشتریان ارائه می‌دهد.
             </ListItem>
             <ListItem title="توسعه اپلیکیشن">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+              خدمات ما در زمینه توسعه اپلیکیشن برای سیستم عامل‌های iOS و اندروید متمرکز است. از جمله فعالیت‌های ما طراحی و توسعه اپلیکیشن‌های متنوع برای دو پلتفرم موبایل و تحت وب می‌باشد. تیم ما از تکنولوژی‌های روز و رویکردهای نوآورانه استفاده می‌کند تا به ارائه راه‌حل‌های نرم‌افزاری با کیفیت و عملکرد بالا بپردازد.
             </ListItem>
             <ListItem title="تیم سازی">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+              خدمات ما در زمینه تیم سازی شامل ارائه مشاوره و راهکارهایی برای توسعه تیم‌های فنی و تکنولوژی می‌باشد. تیم ما از تجربه و دانش خود در زمینه توسعه و مدیریت تیم‌های فنی استفاده می‌کند تا به کسب‌وکارها کمک کند تا تیم‌های فنی خود را توسعه دهند و به بهترین شکل ممکن به اهداف خود برسند.
             </ListItem>
           </List>
         </div>
@@ -173,10 +193,10 @@ export default async function Home() {
       <Container className="mt-24 sm:mt-32 md:mt-56">
         <FadeIn className="max-w-3xl">
           <h1 className="font-display text-5xl font-medium tracking-tight text-slate-950 [text-wrap:balance] sm:text-7xl">
-            استودیو برنامه نویسی خلاق واقع در تهران
+            استودیو برنامه نویسی با تمرکز بر خلاقیت و کیفیت
           </h1>
           <p className="mt-6 text-xl text-slate-600">
-            ما یک استودیو توسعه هستیم که در تلاقی طراحی و فناوری فعالیت می‌کنیم. اما این یک تلاقی پرانرژی است - بسیاری از کارکنان ما در تجربه‌های موفق و هیجان‌انگیز شرکت کرده‌اند.
+            کارنسا، استودیویی با خلاقیت و کیفیت در برنامه نویسی و طراحی وبسایت و اپلیکیشن موبایل است. تیم ما از افراد متخصص و با تجربه تشکیل شده است و با استفاده از جدیدترین تکنولوژی‌ها و رویکردهای نوآورانه، بهترین راه حل‌های برنامه نویسی را ارائه می‌دهد. با کارنسا، تجربه‌ی کاری متفاوتی خواهید داشت و به طراحی وبسایت‌هایی منحصر به فرد و کارآمد دست خواهید یافت. ما به ارائه خدمات با کیفیت بالا و رضایت مشتریانمان اهمیت می‌دهیم.
           </p>
         </FadeIn>
       </Container>
@@ -185,12 +205,12 @@ export default async function Home() {
 
       <CaseStudies caseStudies={caseStudies} />
 
-      <Testimonial
+      {/* <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
         client={{ name: 'Phobia', logo: logoPhobiaDark }}
       >
         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-      </Testimonial>
+      </Testimonial> */}
 
       <Services />
 

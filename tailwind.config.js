@@ -22,9 +22,9 @@ module.exports = {
         '4xl': '2.5rem',
       },
       fontFamily: {
-        sans: ['PeydaWeb', ...defaultTheme.fontFamily.sans],
+        sans: ['var(--font-peyda)'],
         display: [
-          ['PeydaWeb', ...defaultTheme.fontFamily.sans],
+          ['var(--font-peyda)'],
           { fontVariationSettings: '"wdth" 125' },
         ],
       },

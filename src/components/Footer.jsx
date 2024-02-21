@@ -25,9 +25,9 @@ const navigation = [
   {
     title: 'کارنسا',
     links: [
-      { title: 'درباره ما', href: '/about' },
+      // { title: 'درباره ما', href: '/about' },
       { title: 'روند همکاری', href: '/process' },
-      { title: 'وبلاگ', href: '/blog' },
+      // { title: 'وبلاگ', href: '/blog' },
       { title: 'تماس با ما', href: '/contact' },
     ],
   },

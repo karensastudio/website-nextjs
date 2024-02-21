@@ -9,23 +9,35 @@ import { Container } from '@/components/Container'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 import { PageIntro } from '@/components/PageIntro'
 import { Testimonial } from '@/components/Testimonial'
-import logoBrightPath from '@/images/clients/bright-path/logo-dark.svg'
-import logoFamilyFund from '@/images/clients/family-fund/logo-dark.svg'
-import logoGreenLife from '@/images/clients/green-life/logo-dark.svg'
-import logoHomeWork from '@/images/clients/home-work/logo-dark.svg'
 import logoMailSmirk from '@/images/clients/mail-smirk/logo-dark.svg'
-import logoNorthAdventures from '@/images/clients/north-adventures/logo-dark.svg'
-import logoPhobia from '@/images/clients/phobia/logo-dark.svg'
-import logoUnseal from '@/images/clients/unseal/logo-dark.svg'
 import { formatDate } from '@/lib/formatDate'
 import { loadCaseStudies } from '@/lib/mdx'
+import clsx from 'clsx'
+
+import PhinixLogo from '@/images/clients/phinix/phinix-logo.png'
+import KioskLogo from '@/images/clients/kiosk/kiosk-logo.svg'
+import ViwinLogo from '@/images/clients/viwin/viwin-logo.svg'
+import GardeshgariLogo from '@/images/clients/gardeshgari/gardeshgari-logo.svg'
+import BimeSamanLogo from '@/images/clients/bime-saman/bime-saman-logo.png'
+import UnileverLogo from '@/images/clients/unilever/unilever-logo.svg'
+import OmnicartLogo from '@/images/clients/omnicart/omnicart-logo-dark.svg'
+import ArianDieselLogo from '@/images/clients/arian-diesel/arian-diesel-logo.png'
+import IliaAutoLogo from '@/images/clients/ilia-auto/ilia-logo.png'
+import FinupLogo from '@/images/clients/finup/finup-logo-dark.svg'
+import SimorghTejaratLogo from '@/images/clients/simorgh-tejarat/simorgh-tejarat-logo.png'
+import MedpipLogo from '@/images/clients/medpip/medpip-logo.png'
+import PuzzleLogo from '@/images/clients/puzzle/puzzle-logo.svg'
+import ZeenomeLogo from '@/images/clients/zeenome/zeenome-logo.svg'
+import BrauntabLogo from '@/images/clients/bruntab/bruntab-logo.png'
+import AvidfoamLogo from '@/images/clients/avidfoam/avidfoam-logo.png'
+import ApadanaLogo from '@/images/clients/apadana/apadana-logo.png'
 
 function CaseStudies({ caseStudies }) {
   return (
     <Container className="mt-40">
       <FadeIn>
         <h2 className="font-display text-2xl font-semibold text-slate-950">
-          Case studies
+          شرح پروژه‌ها
         </h2>
       </FadeIn>
       <div className="mt-10 space-y-20 sm:space-y-24 lg:space-y-32">
@@ -38,7 +50,7 @@ function CaseStudies({ caseStudies }) {
                     <Image
                       src={caseStudy.logo}
                       alt=""
-                      className="h-16 w-16 flex-none"
+                      className="h-16 w-16 flex-none object-contain"
                       unoptimized
                     />
                     <h3 className="mt-6 text-sm font-semibold text-slate-950 sm:mt-0 lg:mt-8">
@@ -70,7 +82,7 @@ function CaseStudies({ caseStudies }) {
                       href={caseStudy.href}
                       aria-label={`Read case study: ${caseStudy.client}`}
                     >
-                      Read case study
+                      بیشتر بخوانید
                     </Button>
                   </div>
                   {caseStudy.testimonial && (
@@ -92,14 +104,23 @@ function CaseStudies({ caseStudies }) {
 }
 
 const clients = [
-  ['Phobia', logoPhobia],
-  ['Family Fund', logoFamilyFund],
-  ['Unseal', logoUnseal],
-  ['Mail Smirk', logoMailSmirk],
-  ['Home Work', logoHomeWork],
-  ['Green Life', logoGreenLife],
-  ['Bright Path', logoBrightPath],
-  ['North Adventures', logoNorthAdventures],
+  ['بانک گردشگری', GardeshgariLogo, false],
+  ['بیمه سامان', BimeSamanLogo, false],
+  ['یونیلیور ایران', UnileverLogo, false],
+  ['صرافی فینیکس', PhinixLogo, false],
+  ['Omnicart', OmnicartLogo, false],
+  ['صرافی کیوسک', KioskLogo, false],
+  ['آرین دیزل', ArianDieselLogo, false],
+  ['وی‌وین', ViwinLogo, true],
+  ['صنایع خودروسازی ایلیا', IliaAutoLogo, true],
+  ['مجموعه رویدادهای فیناپ', FinupLogo, false],
+  ['سامانه‌های یکپارچه سیمرغ تجارت', SimorghTejaratLogo, false],
+  ['پل ایده‌آل پارس', MedpipLogo, false],
+  ['پازل استودیو', PuzzleLogo, false],
+  ['زینوم', ZeenomeLogo, false],
+  ['برونتاب انرژی', BrauntabLogo, false],
+  ['آوید فوم', AvidfoamLogo, false],
+  ['رستوران آپادانا', ApadanaLogo, false],
 ]
 
 function Clients() {
@@ -107,7 +128,7 @@ function Clients() {
     <Container className="mt-24 sm:mt-32 lg:mt-40">
       <FadeIn>
         <h2 className="font-display text-2xl font-semibold text-slate-950">
-          You’re in good company
+          همکاری با شما باعث افتخار ماست
         </h2>
       </FadeIn>
       <FadeInStagger className="mt-10" faster>
@@ -116,11 +137,11 @@ function Clients() {
           role="list"
           className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-4"
         >
-          {clients.map(([client, logo]) => (
+          {clients.map(([client, logo, invert]) => (
             <li key={client} className="group">
               <FadeIn className="overflow-hidden">
                 <Border className="pt-12 group-[&:nth-child(-n+2)]:-mt-px sm:group-[&:nth-child(3)]:-mt-px lg:group-[&:nth-child(4)]:-mt-px">
-                  <Image src={logo} alt={client} unoptimized />
+                  <Image src={logo} alt={client} className={clsx("grayscale opacity-90 max-w-[120px] mx-auto", invert && 'invert')} unoptimized />
                 </Border>
               </FadeIn>
             </li>
@@ -132,7 +153,7 @@ function Clients() {
 }
 
 export const metadata = {
-  title: 'Our Work',
+  title: 'نمونه کار ها',
   description:
     'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
 }
@@ -143,13 +164,11 @@ export default async function Work() {
   return (
     <>
       <PageIntro
-        eyebrow="Our work"
-        title="Proven solutions for real-world problems."
+        eyebrow="نمونه کار ها"
+        title="راه حل‌هایی اجرا شده برای نیاز مشتریان"
       >
         <p>
-          We believe in efficiency and maximizing our resources to provide the
-          best value to our clients. The primary way we do that is by re-using
-          the same five projects we’ve been developing for the past decade.
+          در این بخش ما به توصیف و ارائه گزارشی کوتاه از راه حل هایی که با توجه به نیاز کارفرما برای آن ها به شکل وب سایت اجرا شده میپردازیم.
         </p>
       </PageIntro>
 

@@ -128,11 +128,7 @@ function Navigation() {
     <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white">
       <NavigationRow>
         <NavigationItem href="/work">نمونه کارها</NavigationItem>
-        <NavigationItem href="/about">درباره ما</NavigationItem>
-      </NavigationRow>
-      <NavigationRow>
         <NavigationItem href="/process">روند همکاری</NavigationItem>
-        <NavigationItem href="/blog">بلاگ</NavigationItem>
       </NavigationRow>
     </nav>
   )
@@ -215,7 +211,7 @@ function RootLayoutInner({ children }) {
                 <div className="grid grid-cols-1 gap-y-10 pb-16 pt-10 sm:grid-cols-2 sm:pt-16">
                   <div>
                     <h2 className="font-display text-base font-semibold text-white">
-                      پارتنرهای ما
+                      شرکای تجاری ما
                     </h2>
                     <Offices
                       invert
@@ -242,7 +238,7 @@ function RootLayoutInner({ children }) {
       >
         <motion.div
           layout
-          className="relative isolate flex w-full flex-col pt-9"
+          className={"relative isolate flex w-full flex-col pt-9"}
         >
           <GridPattern
             className="absolute inset-x-0 -top-14 -z-10 h-[1000px] w-full fill-slate-50 stroke-slate-950/5 [mask-image:linear-gradient(to_bottom_right,white_40%,transparent_50%)]"
@@ -250,7 +246,7 @@ function RootLayoutInner({ children }) {
             interactive
           />
 
-          <main className="w-full flex-auto">{children}</main>
+          <main className={"w-full flex-auto"}>{children}</main>
 
           <Footer />
         </motion.div>

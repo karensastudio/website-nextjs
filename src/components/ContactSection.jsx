@@ -10,16 +10,16 @@ export function ContactSection() {
         <div className="mx-auto max-w-4xl">
           <div className="max-w-xl">
             <h2 className="font-display text-3xl font-medium text-white [text-wrap:balance] sm:text-4xl">
-              میتونی همکاریمون رو با یه مشاوره از سمت ما شروع کنی
+              از مشاوره، تا اجرا و پشتیبانی در کنار شما هستیم
             </h2>
             <div className="mt-6 flex">
               <Button href="/contact" invert>
-                شروع مکالمه با یه سلام
+                شروع مکالمه
               </Button>
             </div>
             <div className="mt-10 border-t border-white/10 pt-10">
               <h3 className="font-display text-base font-semibold text-white">
-                همکاران ما
+                شرکای تجاری ما
               </h3>
               <Offices
                 invert

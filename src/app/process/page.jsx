@@ -230,7 +230,7 @@ function Values() {
 }
 
 export const metadata = {
-  title: 'Our Process',
+  title: 'روند همکاری',
   description:
     'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
 }
@@ -238,7 +238,7 @@ export const metadata = {
 export default function Process() {
   return (
     <>
-      <PageIntro eyebrow="Our process" title="How we work">
+      <PageIntro eyebrow="روند همکاری" title="صفر تا صد پروژه">
         <p>
           We believe in efficiency and maximizing our resources to provide the
           best value to our clients. The primary way we do that is by re-using

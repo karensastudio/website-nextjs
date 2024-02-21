@@ -20,7 +20,7 @@ export function Border({
         position === 'top' &&
           'before:right-0 before:top-0 before:h-px before:w-6 after:right-8 after:left-0 after:top-0 after:h-px',
         position === 'left' &&
-          'before:right-0 before:top-0 before:h-6 before:w-px after:bottom-0 after:right-0 after:top-8 after:w-px',
+          'before:-right-8 before:top-0 before:h-6 before:w-px after:bottom-0 after:-right-8 after:top-8 after:w-px',
       )}
       {...props}
     />
