@@ -50,9 +50,6 @@ export function ContactForm() {
         try {
             let response = await fetch('https://hooks.zapier.com/hooks/catch/18035987/3epflfs/', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
                 body: JSON.stringify(data),
             })
             if (response.ok) {
