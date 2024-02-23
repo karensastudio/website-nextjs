@@ -12,14 +12,17 @@ export function ContactSection() {
             <h2 className="font-display text-3xl font-medium text-white [text-wrap:balance] sm:text-4xl">
               از مشاوره، تا اجرا و پشتیبانی در کنار شما هستیم
             </h2>
-            <div className="mt-6 flex">
+            <div className="mt-6 flex gap-3">
               <Button href="/contact" invert>
-                شروع مکالمه
+                تماس با ما
+              </Button>
+              <Button href="https://t.me/karensastudio_contact" invert>
+                شروع مکالمه در تلگرام
               </Button>
             </div>
             <div className="mt-10 border-t border-white/10 pt-10">
               <h3 className="font-display text-base font-semibold text-white">
-                شرکای تجاری ما
+                راه‌های ارتباطی
               </h3>
               <Offices
                 invert

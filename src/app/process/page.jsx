@@ -29,7 +29,7 @@ function Section({ title, image, children }) {
         <div className="mt-12 lg:mt-0 lg:w-[37rem] lg:flex-none lg:group-even/section:order-first">
           <FadeIn>
             <div
-              className="font-display text-base font-semibold before:text-slate-300 before:content-['/_'] after:text-slate-950 after:content-[counter(section,decimal-leading-zero)]"
+              className="font-display text-base font-semibold after:text-slate-300 after:content-['/_'] before:text-slate-950 before:content-[counter(section,decimal-leading-zero)]"
               aria-hidden="true"
             />
             <h2 className="mt-2 font-display text-3xl font-medium tracking-tight text-slate-950 sm:text-4xl">
@@ -45,40 +45,28 @@ function Section({ title, image, children }) {
 
 function Discover() {
   return (
-    <Section title="Discover" image={{ src: imageWhiteboard }}>
+    <Section title="مشاوره" image={{ src: imageWhiteboard }}>
       <div className="space-y-6 text-base text-slate-600">
         <p>
-          We work closely with our clients to understand their{' '}
-          <strong className="font-semibold text-slate-950">needs</strong> and
-          goals, embedding ourselves in their every day operations to understand
-          what makes their business tick.
+          در ابتدا با برگزاری جلسات مشاوره به شما کمک می‌کنیم تا دید تکنیکال و پروداکتی از ایده خودتان را به دست آورید. این جلسات به شما کمک می‌کنند تا ایده‌ی خود را به یک پروژه‌ی قابل اجرا تبدیل کنید.
         </p>
         <p>
-          Our team of private investigators shadow the company director’s for
-          several weeks while our account managers focus on going through their
-          trash. Our senior security experts then perform social engineering
-          hacks to gain access to their{' '}
-          <strong className="font-semibold text-slate-950">business</strong>{' '}
-          accounts — handing that information over to our forensic accounting
-          team.
+          در ادامه با مکتوب کردن سوالات مختلف و بررسی‌های امکان‌پذیری، به شما کمک می‌کنیم تا یک RFP (Request for Proposal) کامل و دقیق برای پروژه‌ی خودتان تهیه کنید.
         </p>
         <p>
-          Once the full audit is complete, we report back with a comprehensive{' '}
-          <strong className="font-semibold text-slate-950">plan</strong> and,
-          more importantly, a budget.
+          پس از برگزاری جلسات، تیم ما با بررسی دقیق این RFP و مشاهده نمونه و رقبای موجود،‌ زمان‌بندی و هزینه اجرای پروژه را در قالب یک پروپوزال به شما ارائه می‌دهد.
         </p>
       </div>
 
       <h3 className="mt-12 font-display text-base font-semibold text-slate-950">
-        Included in this phase
+        کلمات کلیدی این فاز
       </h3>
-      <TagList className="mt-4">
-        <TagListItem>In-depth questionnaires</TagListItem>
-        <TagListItem>Feasibility studies</TagListItem>
-        <TagListItem>Blood samples</TagListItem>
-        <TagListItem>Employee surveys</TagListItem>
-        <TagListItem>Proofs-of-concept</TagListItem>
-        <TagListItem>Forensic audit</TagListItem>
+      <TagList className="mt-4 pl-10">
+        <TagListItem>پروپوزال</TagListItem>
+        <TagListItem>قیمت‌دهی</TagListItem>
+        <TagListItem>زمان‌بندی</TagListItem>
+        <TagListItem>تحلیل رقبا</TagListItem>
+        <TagListItem>پیش‌نویس قرارداد</TagListItem>
       </TagList>
     </Section>
   )
@@ -86,90 +74,42 @@ function Discover() {
 
 function Build() {
   return (
-    <Section title="Build" image={{ src: imageLaptop, shape: 1 }}>
+    <Section title="اجرای پروژه" image={{ src: imageLaptop, shape: 1 }}>
       <div className="space-y-6 text-base text-slate-600">
         <p>
-          Based off of the discovery phase, we develop a comprehensive roadmap
-          for each product and start working towards delivery. The roadmap is an
-          intricately tangled mess of technical nonsense designed to drag the
-          project out as long as possible.
+          همزمان با اجرای قرارداد و پرداخت پیش پرداخت، تیم ما با بررسی دقیق نیازهای پروژه و انتخاب تکنولوژی‌های مناسب، به اجرای پروژه می‌پردازد و در صورت نیاز پروژه به Ui Design پروسه طراحی آن از این نقطه شروع می‌شود.
         </p>
         <p>
-          Each client is assigned a key account manager to keep lines of
-          communication open and obscure the actual progress of the project.
-          They act as a buffer between the client’s incessant nagging and the
-          development team who are hard at work scouring open source projects
-          for code to re-purpose.
+          کارفرما بایستی حتما همزمان با انجام پیش‌پرداخت، مواردی همچون سرور، دامنه و... را نیز آماده و تحویل دهد تا تیم بتواند مطابق با زمان‌بندی ارائه شده به اجرای پروژه بپردازد.
         </p>
         <p>
-          Our account managers are trained to only reply to client emails after
-          9pm, several days after the initial email. This reinforces the general
-          aura that we are very busy and dissuades clients from asking for
-          changes.
+          در این فاز با توجه به زمانبندی ارائه شده، جلساتی به صورت هفتگی یا ماهیانه برگزار می‌شود تا از پیشرفت پروژه مطلع شوید.
+        </p>
+        <p>
+          در طی هفته‌های پایانی اجرای پروژه، تیم ما با برگزاری جلسات تست و ارائه نسخه‌های پیش‌نمایشی به شما اطمینان لازم را می‌دهد که پروژه به شکل درست پیاده‌سازی شده است.
         </p>
       </div>
-
-      <Blockquote
-        author={{ name: 'Debra Fiscal', role: 'CEO of Unseal' }}
-        className="mt-12"
-      >
-        Studio were so regular with their progress updates we almost began to
-        think they were automated!
-      </Blockquote>
     </Section>
   )
 }
 
 function Deliver() {
   return (
-    <Section title="Deliver" image={{ src: imageMeeting, shape: 2 }}>
+    <Section title="تحویل پروژه" image={{ src: imageMeeting, shape: 2 }}>
       <div className="space-y-6 text-base text-slate-600">
         <p>
-          About halfway through the Build phase, we push each project out by 6
-          weeks due to a change in{' '}
-          <strong className="font-semibold text-slate-950">
-            requirements
-          </strong>
-          . This allows us to increase the budget a final time before launch.
+          در این مرحله پروژه به شکل کامل به شما تحویل داده می‌شود. این مرحله شامل تحویل کد منبع، داکیومنتیشن پروژه و آموزش‌های لازم برای استفاده از پروژه است.
         </p>
         <p>
-          Despite largely using pre-built components, most of the{' '}
-          <strong className="font-semibold text-slate-950">progress</strong>{' '}
-          on each project takes place in the final 24 hours. The development
-          time allocated to each client is actually spent making augmented
-          reality demos that go viral on Twitter.
+          در این مدت با تست کامل پروژه و اطمینان از عملکرد صحیح آن، پروژه به شکل کامل به شما تحویل داده می‌شود. دیباگ و رفع اشکالات پروژه در دو مرحله دیباگ لیست اولیه و دیباگ لیست نهایی انجام می‌شود.
         </p>
         <p>
-          We ensure that the main pages of the site are{' '}
-          <strong className="font-semibold text-slate-950">
-            fully functional
-          </strong>{' '}
-          at launch — the auxiliary pages will, of course, be lorem ipusm shells
-          which get updated as part of our exorbitant{' '}
-          <strong className="font-semibold text-slate-950">
-            maintenance
-          </strong>{' '}
-          retainer.
+          نهایتا با تایید کارفرما، گام نهایی پروژه یعنی نصب و راه‌اندازی پروژه بر روی سرورهای کارفرما انجام می‌شود و سرویس به شکل کامل و با بهینه‌سازی سرعت و کشینگ، در دسترس کاربران قرار می‌گیرد.
+        </p>
+        <p>
+          با تحویل پروژه، تیم ما به شما این گارانتی کامل را می‌دهد که در صورت نیاز به پشتیبانی و تغییرات بعدی در پروژه، همچنان در کنار شما خواهد بود. پشتیبانی رایگان پروژه تا مدت ۳ ماه در قالب حل ایرادات (بدون توسعه ویژگی‌های جدید) ادامه خواهد داشت.
         </p>
       </div>
-
-      <h3 className="mt-12 font-display text-base font-semibold text-slate-950">
-        Included in this phase
-      </h3>
-      <List className="mt-8">
-        <ListItem title="Testing">
-          Our projects always have 100% test coverage, which would be impressive
-          if our tests weren’t as porous as a sieve.
-        </ListItem>
-        <ListItem title="Infrastructure">
-          To ensure reliability we only use the best Digital Ocean droplets that
-          $4 a month can buy.
-        </ListItem>
-        <ListItem title="Support">
-          Because we hold the API keys for every critical service your business
-          uses, you can expect a lifetime of support, and invoices, from us.
-        </ListItem>
-      </List>
     </Section>
   )
 }
@@ -240,9 +180,7 @@ export default function Process() {
     <>
       <PageIntro eyebrow="روند همکاری" title="صفر تا صد پروژه">
         <p>
-          We believe in efficiency and maximizing our resources to provide the
-          best value to our clients. The primary way we do that is by re-using
-          the same five projects we’ve been developing for the past decade.
+          در این بخش با توصیف کامل روند اجرای یک پروژه از مشاوره تا تحویل و پشتیبانی پروژه، شما را با ساختار کلی اجرای پروژه‌ها توسط تیم کارنسا آشنا می‌کنیم.
         </p>
       </PageIntro>
 
@@ -252,7 +190,7 @@ export default function Process() {
         <Deliver />
       </div>
 
-      <Values />
+      {/* <Values /> */}
 
       <ContactSection />
     </>

@@ -24,7 +24,7 @@ function BlockquoteWithImage({ author, children, className, image }) {
       </div>
       <figcaption className="text-sm text-slate-950 sm:col-span-7 sm:row-start-3 sm:text-base">
         <span className="font-semibold">{author.name}</span>
-        <span className="hidden font-semibold sm:inline">, </span>
+        <span className="hidden font-semibold sm:inline">، </span>
         <br className="sm:hidden" />
         <span className="sm:font-semibold">{author.role}</span>
       </figcaption>
@@ -40,7 +40,7 @@ function BlockquoteWithoutImage({ author, children, className }) {
           {typeof children === 'string' ? <p>{children}</p> : children}
         </blockquote>
         <figcaption className="mt-6 font-semibold text-slate-950">
-          {author.name}, {author.role}
+          {author.name}، {author.role}
         </figcaption>
       </figure>
     </Border>

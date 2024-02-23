@@ -93,11 +93,11 @@ export function ContactForm() {
                         <fieldset>
                             <legend className="text-base/6 text-slate-500">بودجه حدودی</legend>
                             <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2">
-                                <RadioInput label="۱۰ تا ۵ میلیون تومن" name="budget" value="5" />
-                                <RadioInput label="۱۰ تا ۲۰ میلیون تومن" name="budget" value="10" />
-                                <RadioInput label="۲۰ تا ۵۰ میلیون تومان" name="budget" value="20" />
-                                <RadioInput label="۵۰ تا ۱۰۰ میلیون تومان" name="budget" value="50" />
-                                <RadioInput label="بالاتر از ۱۰۰ میلیون تومان" name="budget" value="100" />
+                                <RadioInput label="۵ تا ۱۰ میلیون تومن" name="budget" value="5to10" />
+                                <RadioInput label="۱۰ تا ۲۰ میلیون تومن" name="budget" value="10to20" />
+                                <RadioInput label="۲۰ تا ۵۰ میلیون تومان" name="budget" value="20to50" />
+                                <RadioInput label="۵۰ تا ۱۰۰ میلیون تومان" name="budget" value="50to100" />
+                                <RadioInput label="بالاتر از ۱۰۰ میلیون تومان" name="budget" value="above100" />
                             </div>
                         </fieldset>
                     </div>

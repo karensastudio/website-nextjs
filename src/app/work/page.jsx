@@ -34,6 +34,11 @@ import ApadanaLogo from '@/images/clients/apadana/apadana-logo.png'
 import IgniteLogo from '@/images/clients/ignite/ignite-logo.png'
 import ArtnooshganLogo from '@/images/clients/artnooshgan/artnooshgan-logo.png'
 import BehinepardazanLogo from '@/images/clients/behinepardazan/behinepardazan-logo.png'
+import MomLogo from '@/images/clients/mom/mom-logo.webp'
+import SibcheLogo from '@/images/clients/sibche/sibche-logo.png'
+import ZistaLogo from '@/images/clients/zista/zista-logo.png'
+import VatandarFranceLogo from '@/images/clients/vatandar-france/vatandar-france-logo.png'
+import TedxSutLogo from '@/images/clients/tedx-sut/tedx-sut-logo.png'
 
 function CaseStudies({ caseStudies }) {
   return (
@@ -123,10 +128,15 @@ const clients = [
   ['زینوم', ZeenomeLogo, false],
   ['برونتاب انرژی', BrauntabLogo, false],
   ['آوید فوم', AvidfoamLogo, false],
+  ['مرکز ناباروری مام', MomLogo, true],
+  ['سیبچه', SibcheLogo, false],
+  ['بهینه پردازان', BehinepardazanLogo, false],
+  ['تدکس شریف', TedxSutLogo, false],
   ['رستوران آپادانا', ApadanaLogo, false],
   ['Ignite talks', IgniteLogo, false],
   ['آرت نوشگان', ArtnooshganLogo, false],
-  ['بهینه پردازان', BehinepardazanLogo, false],
+  ['زیستا صدر سبا', ZistaLogo, false],
+  ['Vatandar France', VatandarFranceLogo, false],
 ]
 
 function Clients() {
@@ -145,9 +155,9 @@ function Clients() {
         >
           {clients.map(([client, logo, invert]) => (
             <li key={client} className="group">
-              <FadeIn className="overflow-hidden">
-                <Border className="pt-12 group-[&:nth-child(-n+2)]:-mt-px sm:group-[&:nth-child(3)]:-mt-px lg:group-[&:nth-child(4)]:-mt-px">
-                  <Image src={logo} alt={client} className={clsx("grayscale opacity-90 max-w-[120px] mx-auto", invert && 'invert')} unoptimized />
+              <FadeIn className="overflow-hidden w-full flex items-stretch justify-center h-full">
+                <Border className="w-full pt-12 group-[&:nth-child(-n+2)]:-mt-px sm:group-[&:nth-child(3)]:-mt-px lg:group-[&:nth-child(4)]:-mt-px flex items-center justify-center">
+                  <Image src={logo} alt={client} className={clsx("grayscale opacity-90 max-w-[120px] mx-auto flex items-center justify-center", invert && 'invert')} unoptimized />
                 </Border>
               </FadeIn>
             </li>
