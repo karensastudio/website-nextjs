@@ -5,6 +5,7 @@ import { GrayscaleTransitionImage } from '@/components/GrayscaleTransitionImage'
 import { MDXComponents } from '@/components/MDXComponents'
 import { PageIntro } from '@/components/PageIntro'
 import { PageLinks } from '@/components/PageLinks'
+import { formatDate } from '@/lib/formatDate'
 import { loadCaseStudies } from '@/lib/mdx'
 
 export default async function CaseStudyLayout({ caseStudy, children }) {
@@ -33,8 +34,8 @@ export default async function CaseStudyLayout({ caseStudy, children }) {
                     <div className="border-t border-slate-200 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
                       <dt className="font-semibold">سال</dt>
                       <dd>
-                        <time dateTime={caseStudy.date.split('-')[0]}>
-                          {caseStudy.date.split('-')[0]}
+                        <time dateTime={formatDate(caseStudy.date)}>
+                          {formatDate(caseStudy.date)}
                         </time>
                       </dd>
                     </div>
@@ -71,7 +72,7 @@ export default async function CaseStudyLayout({ caseStudy, children }) {
       {moreCaseStudies.length > 0 && (
         <PageLinks
           className="mt-24 sm:mt-32 lg:mt-40"
-          title="More case studies"
+          title="نمونه‌کارهای دیگر"
           pages={moreCaseStudies}
         />
       )}

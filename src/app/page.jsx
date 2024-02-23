@@ -33,6 +33,7 @@ import MedpipLogo from '@/images/clients/medpip/medpip-logo.png'
 
 import imageLaptop from '@/images/laptop.jpg'
 import { loadCaseStudies } from '@/lib/mdx'
+import { formatDate } from '@/lib/formatDate'
 
 const clients = [
   ['بانک گردشگری', GardeshgariLogo],
@@ -112,10 +113,9 @@ function CaseStudies({ caseStudies }) {
                 </h3>
                 <p className="mt-6 flex gap-x-2 text-sm text-slate-950">
                   <time
-                    dateTime={caseStudy.date.split('-')[0]}
-                    className="font-semibold"
+                    dateTime={formatDate(caseStudy.date)}
                   >
-                    {caseStudy.date.split('-')[0]}
+                    {formatDate(caseStudy.date)}
                   </time>
                   <span className="text-slate-300" aria-hidden="true">
                     /

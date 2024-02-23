@@ -31,6 +31,9 @@ import ZeenomeLogo from '@/images/clients/zeenome/zeenome-logo.svg'
 import BrauntabLogo from '@/images/clients/bruntab/bruntab-logo.png'
 import AvidfoamLogo from '@/images/clients/avidfoam/avidfoam-logo.png'
 import ApadanaLogo from '@/images/clients/apadana/apadana-logo.png'
+import IgniteLogo from '@/images/clients/ignite/ignite-logo.png'
+import ArtnooshganLogo from '@/images/clients/artnooshgan/artnooshgan-logo.png'
+import BehinepardazanLogo from '@/images/clients/behinepardazan/behinepardazan-logo.png'
 
 function CaseStudies({ caseStudies }) {
   return (
@@ -80,7 +83,7 @@ function CaseStudies({ caseStudies }) {
                   <div className="mt-8 flex">
                     <Button
                       href={caseStudy.href}
-                      aria-label={`Read case study: ${caseStudy.client}`}
+                      aria-label={`مطالعه بیشتر: ${caseStudy.client}`}
                     >
                       بیشتر بخوانید
                     </Button>
@@ -121,6 +124,9 @@ const clients = [
   ['برونتاب انرژی', BrauntabLogo, false],
   ['آوید فوم', AvidfoamLogo, false],
   ['رستوران آپادانا', ApadanaLogo, false],
+  ['Ignite talks', IgniteLogo, false],
+  ['آرت نوشگان', ArtnooshganLogo, false],
+  ['بهینه پردازان', BehinepardazanLogo, false],
 ]
 
 function Clients() {

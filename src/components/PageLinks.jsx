@@ -40,10 +40,10 @@ function PageLink({ page }) {
         <Link
           href={page.href}
           className="mt-6 flex gap-x-3 text-base font-semibold text-slate-950 transition hover:text-slate-700"
-          aria-label={`Read more: ${page.title}`}
+          aria-label={`بیشتر بخوانید: ${page.title}`}
         >
-          Read more
-          <ArrowIcon className="w-6 flex-none fill-current" />
+          بیشتر بخوانید
+          <ArrowIcon className="w-6 flex-none fill-current rotate-180" />
           <span className="absolute inset-0" />
         </Link>
       </Border>
