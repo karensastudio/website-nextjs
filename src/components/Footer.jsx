@@ -4,14 +4,15 @@ import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import { Logo } from '@/components/Logo'
 import { socialMediaProfiles } from '@/components/SocialMedia'
+import { toast } from 'sonner'
 
 const navigation = [
   {
     title: 'نمونه‌کارها',
     links: [
-      { title: 'وی‌وی', href: '/work/family-fund' },
-      { title: 'پل ایده‌آل پارس', href: '/work/unseal' },
-      { title: 'زینوم', href: '/work/phobia' },
+      { title: 'پل ایده‌آل پارس', href: '/work/atlas' },
+      { title: 'پازل استودیو', href: '/work/puzzle' },
+      { title: 'فیناپ', href: '/work/finup' },
       {
         title: (
           <>
@@ -79,13 +80,22 @@ function ArrowIcon(props) {
 }
 
 function NewsletterForm() {
+
+  function handleSubmit(event) {
+    event.preventDefault()
+
+    toast.success('از عضویت شما در خبرنامه‌ی ما متشکریم!', {
+      duration: 5000,
+    })
+  }
+
   return (
-    <form className="max-w-sm">
+    <form className="max-w-sm" onSubmit={handleSubmit}>
       <h2 className="font-display text-sm font-semibold tracking-wider text-slate-950">
         ثبت نام در خبرنامه
       </h2>
       <p className="mt-4 text-sm text-slate-700">
-        هر هفته آخرین مقالات و مطالب ما رو از طریق ایمیل دریافت کنید.
+        هر هفته آخرین مقالات و مطالب ما را از طریق ایمیل دریافت کنید.
       </p>
       <div className="relative mt-6">
         <input

@@ -5,3 +5,7 @@
   -webkit-font-feature-settings: "ss02";
   font-feature-settings: "ss02";
 }
+
+[data-sonner-toaster] {
+  font-family: var(--font-peyda);
+}

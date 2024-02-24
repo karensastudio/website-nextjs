@@ -3,6 +3,7 @@
 import { Button } from "@/components/Button"
 import { FadeIn } from "@/components/FadeIn"
 import { useId } from "react";
+import { toast } from "sonner";
 
 function TextInput({ label, ...props }) {
     let id = useId()
@@ -53,13 +54,20 @@ export function ContactForm() {
                 body: JSON.stringify(data),
             })
             if (response.ok) {
-                alert('فرم با موفقیت ارسال شد.')
+                toast.success('فرم با موفقیت ارسال شد.', {
+                    duration: 5000,
+                })
             } else {
-                alert('متاسفانه مشکلی در ارسال فرم به وجود آمد.')
+                toast.error('متاسفانه مشکلی در ارسال فرم به وجود آمد.', {
+                    duration: 5000,
+                })
             }
         } catch (error) {
             console.error('Error:', error)
-            alert('متاسفانه مشکلی در ارسال فرم به وجود آمد.')
+
+            toast.error('متاسفانه مشکلی در ارسال فرم به وجود آمد.', {
+                duration: 5000,
+            })
         }
     }
 

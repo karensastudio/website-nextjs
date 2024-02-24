@@ -41,7 +41,7 @@ function GitHubIcon(props) {
 
 export const socialMediaProfiles = [
   { title: 'اینستاگرام', href: 'https://instagram.com/karensa.studio', icon: InstagramIcon },
-  { title: 'لینکدین', href: 'https://linkedin.com', icon: LinkedinIcon },
+  { title: 'لینکدین', href: 'https://www.linkedin.com/company/karensastudio/', icon: LinkedinIcon },
   { title: 'گیت‌هاب', href: 'https://github.com/karensastudio', icon: GitHubIcon },
 ]
 

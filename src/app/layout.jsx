@@ -3,6 +3,7 @@ import { RootLayout } from '@/components/RootLayout'
 import '@/styles/tailwind.css'
 import clsx from 'clsx'
 import localFont from 'next/font/local'
+import { Toaster } from 'sonner'
 
 export const metadata = {
   title: {
@@ -66,6 +67,14 @@ export default function Layout({ children }) {
   return (
     <html lang="fa" dir='rtl' className="h-full bg-slate-950 text-base antialiased">
       <body className={clsx("flex min-h-full flex-col", 'font-sans', PeydaWeb.variable)}>
+        <Toaster
+          dir="rtl"
+          toastOptions={{
+            classNames: {
+              toast: 'font-sans'
+            },
+          }}
+        />
         <RootLayout>{children}</RootLayout>
       </body>
     </html>
