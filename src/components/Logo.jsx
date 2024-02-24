@@ -76,7 +76,7 @@ export function Logo({
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlSpace="preserve"
-      viewBox="0 0 20.07 3.04"
+      viewBox="0 0 15.12 3.04"
       className={clsx(fillOnHover && 'group/logo', className)}
       {...props}
     >
