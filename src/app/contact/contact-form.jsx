@@ -42,16 +42,21 @@ function RadioInput({ label, ...props }) {
 
 export function ContactForm() {
 
-    // send data to https://hooks.zapier.com/hooks/catch/18035987/3epflfs/ zaiper webhook
     async function handleSubmit(event) {
         event.preventDefault()
-        const formData = new FormData(event.target)
-        const data = Object.fromEntries(formData.entries())
-        console.log(data)
+
+        const formdata = new FormData();
+        formdata.append("name", event.target.name.value);
+        formdata.append("email", event.target.email.value);
+        formdata.append("company", event.target.company.value);
+        formdata.append("phone", event.target.phone.value);
+        formdata.append("message", event.target.message.value);
+        formdata.append("budget", event.target.budget.value);
+
         try {
-            let response = await fetch('https://hooks.zapier.com/hooks/catch/18035987/3epflfs/', {
+            let response = await fetch('https://api01.karensastudio.com/contact', {
                 method: 'POST',
-                body: JSON.stringify(data),
+                body: formdata,
             })
             if (response.ok) {
                 toast.success('فرم با موفقیت ارسال شد.', {
@@ -78,13 +83,14 @@ export function ContactForm() {
                     فرم درخواست همکاری
                 </h2>
                 <div className="isolate mt-6 -space-y-px rounded-2xl bg-white/50">
-                    <TextInput label="نام و نام خانوادگی" name="name" autoComplete="name" />
+                    <TextInput label="نام و نام خانوادگی" name="name" autoComplete="name" required />
 
                     <TextInput
                         label="آدرس ایمیل"
                         type="email"
                         name="email"
                         autoComplete="email"
+                        required
                     />
 
                     <TextInput
@@ -93,7 +99,7 @@ export function ContactForm() {
                         autoComplete="organization"
                     />
 
-                    <TextInput label="شماره موبایل" type="tel" name="phone" autoComplete="tel" />
+                    <TextInput label="شماره موبایل" type="tel" name="phone" autoComplete="tel" required />
 
                     <TextInput label="متن پیام" name="message" />
 
@@ -101,11 +107,11 @@ export function ContactForm() {
                         <fieldset>
                             <legend className="text-base/6 text-slate-500">بودجه حدودی</legend>
                             <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2">
-                                <RadioInput label="۵ تا ۱۰ میلیون تومن" name="budget" value="5to10" />
-                                <RadioInput label="۱۰ تا ۲۰ میلیون تومن" name="budget" value="10to20" />
-                                <RadioInput label="۲۰ تا ۵۰ میلیون تومان" name="budget" value="20to50" />
-                                <RadioInput label="۵۰ تا ۱۰۰ میلیون تومان" name="budget" value="50to100" />
-                                <RadioInput label="بالاتر از ۱۰۰ میلیون تومان" name="budget" value="above100" />
+                                <RadioInput label="۱۰ تا ۴۰ میلیون تومن" name="budget" value="10to40" />
+                                <RadioInput label="۴۰ تا ۸۰ میلیون تومن" name="budget" value="40to80" />
+                                <RadioInput label="۸۰ تا ۱۵۰ میلیون تومان" name="budget" value="80to150" />
+                                <RadioInput label="۱۵۰ تا ۳۰۰ میلیون تومان" name="budget" value="150to300" />
+                                <RadioInput label="بالاتر از ۳۰۰ میلیون تومان" name="budget" value="above300" />
                             </div>
                         </fieldset>
                     </div>
