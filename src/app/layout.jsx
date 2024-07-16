@@ -4,6 +4,7 @@ import '@/styles/tailwind.css'
 import clsx from 'clsx'
 import localFont from 'next/font/local'
 import { Toaster } from 'sonner'
+import { GoogleTagManager } from '@next/third-parties/google'
 
 export const metadata = {
   title: {
@@ -66,6 +67,7 @@ const PeydaWeb = localFont({
 export default function Layout({ children }) {
   return (
     <html lang="fa" dir='rtl' className="h-full bg-slate-950 text-base antialiased">
+      <GoogleTagManager gtmId="G-L3D6C4HCW9" />
       <body className={clsx("flex min-h-full flex-col", 'font-sans', PeydaWeb.variable)}>
         <Toaster
           dir="rtl"
