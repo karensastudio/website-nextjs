@@ -19,7 +19,7 @@ import logoPhobiaDark from '@/images/clients/phobia/logo-dark.svg'
 import logoPhobiaLight from '@/images/clients/phobia/logo-light.svg'
 
 import PhinixLogo from '@/images/clients/phinix/phinix-logo.png'
-import KioskLogo from '@/images/clients/kiosk/kiosk-logo.svg'
+import ZivanLogo from '@/images/clients/zivan/zivan-logo.webp'
 import ViwinLogo from '@/images/clients/viwin/viwin-logo.svg'
 import GardeshgariLogo from '@/images/clients/gardeshgari/gardeshgari-logo.svg'
 import BimeSamanLogo from '@/images/clients/bime-saman/bime-saman-logo.png'
@@ -27,13 +27,14 @@ import UnileverLogo from '@/images/clients/unilever/unilever-logo.svg'
 import OmnicartLogo from '@/images/clients/omnicart/omnicart-logo.svg'
 import ArianDieselLogo from '@/images/clients/arian-diesel/arian-diesel-logo.png'
 import IliaAutoLogo from '@/images/clients/ilia-auto/ilia-logo.png'
-import FinupLogo from '@/images/clients/finup/finup-logo.svg'
+import DanielleeLogo from '@/images/clients/daniellee/daniellee-logo.png'
 import SimorghTejaratLogo from '@/images/clients/simorgh-tejarat/simorgh-tejarat-logo.png'
 import MedpipLogo from '@/images/clients/medpip/medpip-logo.png'
 
 import imageLaptop from '@/images/laptop.jpg'
 import { loadCaseStudies } from '@/lib/mdx'
 import { formatDate } from '@/lib/formatDate'
+import clsx from 'clsx'
 
 const clients = [
   ['بانک گردشگری', GardeshgariLogo],
@@ -41,11 +42,11 @@ const clients = [
   ['یونیلیور ایران', UnileverLogo],
   ['صرافی فینیکس', PhinixLogo],
   ['Omnicart', OmnicartLogo],
-  ['صرافی کیوسک', KioskLogo],
+  ['پت‌شاپ ژیوان', ZivanLogo],
   ['آرین دیزل', ArianDieselLogo],
   ['وی‌وین', ViwinLogo],
   ['صنایع خودروسازی ایلیا', IliaAutoLogo],
-  ['مجموعه رویدادهای فیناپ', FinupLogo],
+  ['شرکت کفش دنیلی', DanielleeLogo, true],
   ['سامانه‌های یکپارچه سیمرغ تجارت', SimorghTejaratLogo],
   ['پل ایده‌آل پارس', MedpipLogo],
 ]
@@ -65,10 +66,10 @@ function Clients() {
             role="list"
             className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-4"
           >
-            {clients.map(([client, logo]) => (
+            {clients.map(([client, logo, invert = false]) => (
               <li key={client} className='flex items-center justify-center'>
                 <FadeIn>
-                  <Image src={logo} alt={client} unoptimized className="grayscale brightness-[100] opacity-90 max-w-[120px] mx-auto" />
+                  <Image src={logo} alt={client} unoptimized className={clsx("grayscale brightness-[100] opacity-90 max-w-[120px] mx-auto", invert ? 'invert' : 'hover:invert-0')} />
                 </FadeIn>
               </li>
             ))}
@@ -88,7 +89,7 @@ function CaseStudies({ caseStudies }) {
   return (
     <>
       <SectionIntro
-        title="هر پروژه، یک داستان و چالش جدید"
+        title="نمونه کار ها"
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
@@ -120,7 +121,7 @@ function CaseStudies({ caseStudies }) {
                   <span className="text-slate-300" aria-hidden="true">
                     /
                   </span>
-                  <span>نمونه کار</span>
+                  <span>{caseStudy.cat}</span>
                 </p>
                 <p className="mt-6 font-display text-2xl font-semibold text-slate-950">
                   {caseStudy.title}
@@ -141,8 +142,8 @@ function Services() {
   return (
     <>
       <SectionIntro
-        eyebrow="خدمات ما"
-        title="ما در چه زمینه‌هایی فعالیت می‌کنیم؟"
+        eyebrow="ما در چه زمینه‌هایی فعالیت می‌کنیم؟"
+        title="حوزه‌های فعالیت ما"
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
@@ -161,10 +162,10 @@ function Services() {
             </FadeIn>
           </div>
           <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-[33rem] lg:pr-4">
-            <ListItem title="طراحی وب (UI/UX)">
+            <ListItem title="طراحی وبسایت">
               خدمات ما در زمینه طراحی UI/UX شامل تحلیل کاربری، طراحی رابط کاربری جذاب و متمایز، و ایجاد پروتوتایپ‌های تعاملی به منظور بهبود تجربه کاربری است. با تمرکز بر کیفیت و ارتباط مستقیم با مشتریان، تیم ما به هدف ارائه تجربه کاربری بی‌نظیری برای مشتریان شما می‌پردازد.
             </ListItem>
-            <ListItem title="برنامه نویسی و توسعه وب">
+            <ListItem title="توسعه وبسایت اختصاصی">
               خدمات ما در زمینه برنامه‌نویسی و توسعه وب شامل ایجاد وب‌سایت‌های شخصی و تجاری، توسعه برنامه‌های وب و اپلیکیشن‌های تحت وب، و ارائه راه‌حل‌های نرم‌افزاری سفارشی برای نیازهای منحصر به فرد کسب‌وکارهاست. تیم ما از فناوری‌های روز استفاده می‌کند و با بهره‌گیری از بهترین استانداردهای برنامه‌نویسی، راه‌حل‌هایی انعطاف‌پذیر و قابل اعتماد را برای مشتریان ارائه می‌دهد.
             </ListItem>
             <ListItem title="توسعه اپلیکیشن">
@@ -181,7 +182,7 @@ function Services() {
 }
 
 export const metadata = {
-  description:'کارنسا، استودیویی با تمرکز بر خلاقیت و کیفیت در طراحی، مشاوره و توسعه اپلیکیشن‌های وب و موبایل است.'
+  description: 'کارنسا، استودیویی با تمرکز بر خلاقیت و کیفیت در طراحی، مشاوره و توسعه اپلیکیشن‌های وب و موبایل است.'
 }
 
 export default async function Home() {

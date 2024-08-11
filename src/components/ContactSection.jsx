@@ -24,10 +24,16 @@ export function ContactSection() {
               <h3 className="font-display text-base font-semibold text-white">
                 راه‌های ارتباطی
               </h3>
-              <Offices
-                invert
-                className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2"
-              />
+              <a href="tel:+989392676126">
+                <p className='text-4xl text-white text-end mt-2 tracking-wider font-bold' dir='ltr'>
+                  +98 939 267 6126
+                </p>
+              </a>
+              <a href="mailto:info@karensastudio.com">
+                <p className='text-lg text-white text-end mt-2 tracking-wider font-light' dir='ltr'>
+                  info@karensastudio.com
+                </p>
+              </a>
             </div>
           </div>
         </div>

@@ -13,6 +13,11 @@ import { ContactForm } from './contact-form'
 function ContactDetails() {
   return (
     <FadeIn>
+      <a href="tel:+989392676126">
+        <p className='text-4xl text-black text-end mb-5 tracking-wider font-bold' dir='ltr'>
+          +98 939 267 6126
+        </p>
+      </a>
       <h2 className="font-display text-base font-semibold text-slate-950">
         شرکای تجاری ما
       </h2>

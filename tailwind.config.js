@@ -1,8 +1,12 @@
+const { nextui } = require('@nextui-org/theme')
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,jsx,mdx,ts,tsx}'],
+  content: [
+    './src/**/*.{js,jsx,mdx,ts,tsx}',
+    './node_modules/@nextui-org/theme/dist/components/[object Object].js',
+  ],
   theme: {
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],
@@ -30,5 +34,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [nextui()],
 }

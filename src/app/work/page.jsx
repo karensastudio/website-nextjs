@@ -13,6 +13,7 @@ import logoMailSmirk from '@/images/clients/mail-smirk/logo-dark.svg'
 import { formatDate } from '@/lib/formatDate'
 import { loadCaseStudies } from '@/lib/mdx'
 import clsx from 'clsx'
+import { Tooltip } from '@nextui-org/tooltip'
 
 import PhinixLogo from '@/images/clients/phinix/phinix-logo.png'
 import KioskLogo from '@/images/clients/kiosk/kiosk-logo.svg'
@@ -28,8 +29,12 @@ import SimorghTejaratLogo from '@/images/clients/simorgh-tejarat/simorgh-tejarat
 import MedpipLogo from '@/images/clients/medpip/medpip-logo.png'
 import PuzzleLogo from '@/images/clients/puzzle/puzzle-logo.svg'
 import ZeenomeLogo from '@/images/clients/zeenome/zeenome-logo.svg'
+import DanielleeLogo from '@/images/clients/daniellee/daniellee-logo.png'
+import HaykLogo from '@/images/clients/hayk/hayk-logo.png'
 import BrauntabLogo from '@/images/clients/bruntab/bruntab-logo.png'
 import AvidfoamLogo from '@/images/clients/avidfoam/avidfoam-logo.png'
+import ZivanLogo from '@/images/clients/zivan/zivan-logo.webp'
+import AvesLogo from '@/images/clients/aves/aves-logo.png'
 import ApadanaLogo from '@/images/clients/apadana/apadana-logo.png'
 import IgniteLogo from '@/images/clients/ignite/ignite-logo.png'
 import ArtnooshganLogo from '@/images/clients/artnooshgan/artnooshgan-logo.png'
@@ -39,6 +44,7 @@ import SibcheLogo from '@/images/clients/sibche/sibche-logo.png'
 import ZistaLogo from '@/images/clients/zista/zista-logo.png'
 import VatandarFranceLogo from '@/images/clients/vatandar-france/vatandar-france-logo.png'
 import TedxSutLogo from '@/images/clients/tedx-sut/tedx-sut-logo.png'
+import CyrusLogo from '@/images/clients/cyrus/cyrus-festival-logo.png'
 
 function CaseStudies({ caseStudies }) {
   return (
@@ -117,21 +123,26 @@ const clients = [
   ['یونیلیور ایران', UnileverLogo, false],
   ['صرافی فینیکس', PhinixLogo, false],
   ['Omnicart', OmnicartLogo, false],
-  ['صرافی کیوسک', KioskLogo, false],
+  ['پت‌شاپ ژیوان', ZivanLogo, false],
+  ['شرکت کفش دنیلی', DanielleeLogo, false],
   ['آرین دیزل', ArianDieselLogo, false],
-  ['وی‌وین', ViwinLogo, true],
   ['صنایع خودروسازی ایلیا', IliaAutoLogo, true],
-  ['مجموعه رویدادهای فیناپ', FinupLogo, false],
   ['سامانه‌های یکپارچه سیمرغ تجارت', SimorghTejaratLogo, false],
+  ['سیبچه', SibcheLogo, false],
   ['پل ایده‌آل پارس', MedpipLogo, false],
+  ['برشته‌کاری قهوه هایک', HaykLogo, false],
+  ['وی‌وین', ViwinLogo, true],
+  ['مجموعه رویدادهای فیناپ', FinupLogo, false],
+  ['صرافی کیوسک', KioskLogo, false],
+  ['مجموعه ورزش‌های آبی آوِس', AvesLogo, true],
   ['پازل استودیو', PuzzleLogo, false],
   ['زینوم', ZeenomeLogo, false],
   ['برونتاب انرژی', BrauntabLogo, false],
   ['آوید فوم', AvidfoamLogo, false],
   ['مرکز ناباروری مام', MomLogo, true],
-  ['سیبچه', SibcheLogo, false],
   ['بهینه پردازان', BehinepardazanLogo, false],
   ['تدکس شریف', TedxSutLogo, false],
+  ['فستیوال فیلم کورش', CyrusLogo, true],
   ['رستوران آپادانا', ApadanaLogo, false],
   ['Ignite talks', IgniteLogo, false],
   ['آرت نوشگان', ArtnooshganLogo, false],
@@ -157,7 +168,9 @@ function Clients() {
             <li key={client} className="group">
               <FadeIn className="overflow-hidden w-full flex items-stretch justify-center h-full">
                 <Border className="w-full pt-12 group-[&:nth-child(-n+2)]:-mt-px sm:group-[&:nth-child(3)]:-mt-px lg:group-[&:nth-child(4)]:-mt-px flex items-center justify-center">
-                  <Image src={logo} alt={client} className={clsx("grayscale opacity-90 max-w-[120px] mx-auto flex items-center justify-center", invert && 'invert')} unoptimized />
+                  <Tooltip position="bottom" content={client} showArrow={true} color='danger'>
+                    <Image src={logo} alt={client} className={clsx("grayscale hover:grayscale-0 transition-all opacity-90 max-w-[120px] mx-auto flex items-center justify-center", invert ? 'invert' : 'hover:invert-0')} unoptimized />
+                  </Tooltip>
                 </Border>
               </FadeIn>
             </li>
@@ -190,13 +203,13 @@ export default async function Work() {
 
       <CaseStudies caseStudies={caseStudies} />
 
-      <Testimonial
+      {/* <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
         client={{ name: 'Mail Smirk', logo: logoMailSmirk }}
       >
         We approached <em>Studio</em> because we loved their past work. They
         delivered something remarkably similar in record time.
-      </Testimonial>
+      </Testimonial> */}
 
       <Clients />
 

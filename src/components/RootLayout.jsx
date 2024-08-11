@@ -209,7 +209,7 @@ function RootLayoutInner({ children }) {
             <div className="relative bg-slate-950 before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-slate-800">
               <Container>
                 <div className="grid grid-cols-1 gap-y-10 pb-16 pt-10 sm:grid-cols-2 sm:pt-16">
-                  <div>
+                  <div className='order-2 md:order-1'>
                     <h2 className="font-display text-base font-semibold text-white">
                       شرکای تجاری ما
                     </h2>
@@ -218,11 +218,16 @@ function RootLayoutInner({ children }) {
                       className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2"
                     />
                   </div>
-                  <div className="sm:border-r sm:border-transparent sm:pl-16">
+                  <div className="order-1 md:order-2 sm:border-r sm:border-transparent sm:pl-16">
+                    <a href="tel:+989392676126">
+                      <p className='text-3xl text-white text-end mb-3 tracking-wider font-bold' dir='ltr'>
+                        +98 939 267 6126
+                      </p>
+                    </a>
                     <h2 className="font-display text-base font-semibold text-white">
                       ما را دنبال کنید
                     </h2>
-                    <SocialMedia className="mt-6" invert />
+                    <SocialMedia className="mt-3" invert />
                   </div>
                 </div>
               </Container>
