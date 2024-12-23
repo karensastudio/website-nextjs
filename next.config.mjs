@@ -15,7 +15,6 @@ import { unifiedConditional } from 'unified-conditional'
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   reactStrictMode: true,
-  output: 'standalone',
 }
 
 function remarkMDXLayout(source, metaName) {
