@@ -4,6 +4,7 @@ import { Button } from "@/components/Button"
 import { FadeIn } from "@/components/FadeIn"
 import { useId } from "react";
 import { toast } from "sonner";
+import { handleSubmitAPI } from "../actions";
 
 function TextInput({ label, ...props }) {
     let id = useId()
@@ -54,11 +55,9 @@ export function ContactForm() {
         formdata.append("budget", event.target.budget.value);
 
         try {
-            let response = await fetch('https://api01.karensastudio.com/contact', {
-                method: 'POST',
-                body: formdata,
-            })
-            if (response.ok) {
+            const response = await handleSubmitAPI(formdata)
+            
+            if (response.message == 'Contact saved successfully') {
                 toast.success('فرم با موفقیت ارسال شد.', {
                     duration: 5000,
                 })
@@ -107,11 +106,12 @@ export function ContactForm() {
                         <fieldset>
                             <legend className="text-base/6 text-slate-500">بودجه حدودی</legend>
                             <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2">
-                                <RadioInput label="۱۰ تا ۴۰ میلیون تومن" name="budget" value="10to40" />
-                                <RadioInput label="۴۰ تا ۸۰ میلیون تومن" name="budget" value="40to80" />
-                                <RadioInput label="۸۰ تا ۱۵۰ میلیون تومان" name="budget" value="80to150" />
-                                <RadioInput label="۱۵۰ تا ۳۰۰ میلیون تومان" name="budget" value="150to300" />
-                                <RadioInput label="بالاتر از ۳۰۰ میلیون تومان" name="budget" value="above300" />
+                                <RadioInput label="۳۰ تا ۵۰ میلیون تومن" name="budget" value="30to50" />
+                                <RadioInput label="۵۰ تا ۷۰ میلیون تومن" name="budget" value="50to70" />
+                                <RadioInput label="۷۰ تا ۱۰۰ میلیون تومان" name="budget" value="70to100" />
+                                <RadioInput label="۱۰۰ تا ۱۵۰ میلیون تومان" name="budget" value="100to150" />
+                                <RadioInput label="بالاتر از ۱۵۰ میلیون تومان" name="budget" value="above150" />
+                                <RadioInput label="میخواهم مذاکره کنم." name="budget" value="needtalk" />
                             </div>
                         </fieldset>
                     </div>

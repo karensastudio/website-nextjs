@@ -15,6 +15,9 @@ import { unifiedConditional } from 'unified-conditional'
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   reactStrictMode: true,
+  experimental: {
+    serverActions: true,
+  }
 }
 
 function remarkMDXLayout(source, metaName) {

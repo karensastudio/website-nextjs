@@ -27,13 +27,6 @@ export function Offices({ invert = false, ...props }) {
           United Kingdom
         </Office>
       </li>
-      <li>
-        <Office name="SefrYek (Social Media Agency)" invert={invert}>
-          <a href='mailto:sefryek.creativehouse@gmail.com' dir='ltr'>sefryek.creativehouse@gmail.com</a>
-          <br />
-          Iran
-        </Office>
-      </li>
     </ul>
   )
 }
