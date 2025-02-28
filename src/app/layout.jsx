@@ -5,6 +5,7 @@ import clsx from 'clsx'
 import localFont from 'next/font/local'
 import { Toaster } from 'sonner'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata = {
   title: {
@@ -78,6 +79,7 @@ export default function Layout({ children }) {
         />
         <RootLayout>{children}</RootLayout>
       </body>
+      <Analytics />
       <GoogleAnalytics gaId='G-L3D6C4HCW9' />
     </html>
   )
