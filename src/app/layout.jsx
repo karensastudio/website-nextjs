@@ -5,7 +5,8 @@ import clsx from 'clsx'
 import localFont from 'next/font/local'
 import { Toaster } from 'sonner'
 import { GoogleAnalytics } from '@next/third-parties/google'
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from '@vercel/analytics/react'
+import Script from 'next/script'
 
 export const metadata = {
   title: {
@@ -60,7 +61,7 @@ const PeydaWeb = localFont({
       path: '../fonts/woff2/PeydaWeb-Black.woff2',
       weight: '900',
       style: 'normal',
-    }
+    },
   ],
   variable: '--font-peyda',
 })
@@ -91,6 +92,15 @@ export default function Layout({ children }) {
       </body>
       <Analytics />
       <GoogleAnalytics gaId="G-Q7EZ9S1J80" />
+      <Script
+        id="goftino-widget"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: ```
+ !function(){var i="DHQHJr",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();
+ ```,
+        }}
+      />
     </html>
   )
 }
