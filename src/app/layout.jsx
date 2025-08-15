@@ -90,7 +90,7 @@ export default function Layout({ children }) {
         <RootLayout>{children}</RootLayout>
       </body>
       <Analytics />
-      <GoogleAnalytics gaId="G-F8N2WPMZ28" />
+      <GoogleAnalytics gaId="G-Q7EZ9S1J80" />
     </html>
   )
 }
