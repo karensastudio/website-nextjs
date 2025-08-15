@@ -67,20 +67,30 @@ const PeydaWeb = localFont({
 
 export default function Layout({ children }) {
   return (
-    <html lang="fa" dir='rtl' className="h-full bg-slate-950 text-base antialiased">
-      <body className={clsx("flex min-h-full flex-col", 'font-sans', PeydaWeb.variable)}>
+    <html
+      lang="fa"
+      dir="rtl"
+      className="h-full bg-slate-950 text-base antialiased"
+    >
+      <body
+        className={clsx(
+          'flex min-h-full flex-col',
+          'font-sans',
+          PeydaWeb.variable,
+        )}
+      >
         <Toaster
           dir="rtl"
           toastOptions={{
             classNames: {
-              toast: 'font-sans'
+              toast: 'font-sans',
             },
           }}
         />
         <RootLayout>{children}</RootLayout>
       </body>
       <Analytics />
-      <GoogleAnalytics gaId='G-L3D6C4HCW9' />
+      <GoogleAnalytics gaId="G-F8N2WPMZ28" />
     </html>
   )
 }
