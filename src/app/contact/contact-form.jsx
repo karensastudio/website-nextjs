@@ -5,6 +5,7 @@ import { FadeIn } from "@/components/FadeIn"
 import { useId } from "react";
 import { toast } from "sonner";
 import { handleSubmitAPI } from "../actions";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 function TextInput({ label, ...props }) {
     let id = useId()
@@ -42,19 +43,32 @@ function RadioInput({ label, ...props }) {
 }
 
 export function ContactForm() {
+    const { executeRecaptcha } = useGoogleReCaptcha();
 
     async function handleSubmit(event) {
         event.preventDefault()
 
-        const formdata = new FormData();
-        formdata.append("name", event.target.name.value);
-        formdata.append("email", event.target.email.value);
-        formdata.append("company", event.target.company.value);
-        formdata.append("phone", event.target.phone.value);
-        formdata.append("message", event.target.message.value);
-        formdata.append("budget", event.target.budget.value);
+        // Check if reCAPTCHA is ready
+        if (!executeRecaptcha) {
+            toast.error('reCAPTCHA هنوز آماده نشده است. لطفاً دوباره امتحان کنید.', {
+                duration: 5000,
+            })
+            return
+        }
 
         try {
+            // Get reCAPTCHA token
+            const token = await executeRecaptcha('contact_form')
+
+            const formdata = new FormData();
+            formdata.append("name", event.target.name.value);
+            formdata.append("email", event.target.email.value);
+            formdata.append("company", event.target.company.value);
+            formdata.append("phone", event.target.phone.value);
+            formdata.append("message", event.target.message.value);
+            formdata.append("budget", event.target.budget.value);
+            formdata.append("recaptchaToken", token);
+
             const response = await handleSubmitAPI(formdata)
             
             if (response.message == 'Contact saved successfully') {

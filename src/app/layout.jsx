@@ -1,4 +1,5 @@
 import { RootLayout } from '@/components/RootLayout'
+import { RecaptchaProvider } from '@/components/RecaptchaProvider'
 
 import '@/styles/tailwind.css'
 import clsx from 'clsx'
@@ -80,15 +81,17 @@ export default function Layout({ children }) {
           PeydaWeb.variable,
         )}
       >
-        <Toaster
-          dir="rtl"
-          toastOptions={{
-            classNames: {
-              toast: 'font-sans',
-            },
-          }}
-        />
-        <RootLayout>{children}</RootLayout>
+        <RecaptchaProvider>
+          <Toaster
+            dir="rtl"
+            toastOptions={{
+              classNames: {
+                toast: 'font-sans',
+              },
+            }}
+          />
+          <RootLayout>{children}</RootLayout>
+        </RecaptchaProvider>
       </body>
       <Analytics />
       <GoogleAnalytics gaId="G-Q7EZ9S1J80" />
